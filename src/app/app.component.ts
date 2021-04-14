@@ -13,4 +13,8 @@ export class AppComponent {
   clicked($event: MouseEvent): void{
     console.log($event);
   }
+
+  dummyClicked(event: string){
+    console.log(event)
+  }
 }

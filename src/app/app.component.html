@@ -1,11 +1,14 @@
-{{title}}
+<div>
+  <mat-toolbar color="primary">
+    <span>{{ title }}</span>
+    <span class="fill-remaining-space"></span>
+    <span>Text aligné à droite</span>
+  </mat-toolbar>
+</div>
 
-<ul>
-  <li *ngFor="let fruit of fruits">
-    {{fruit}}
-  </li>
-</ul>
 
-<button (click)="clicked($event)" >Click Me</button>
 
 <crm-login></crm-login>
+
+<crm-dummy [label]="title" (clicked)="dummyClicked($event)"></crm-dummy>
+<crm-dummy label="Good Bye" (clicked)="dummyClicked($event)"></crm-dummy>

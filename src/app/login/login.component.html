@@ -1,7 +1,9 @@
 <form [formGroup]="loginForm">
   <p>
-    <label for="email">Email</label>
-    <input name="email" formControlName="email">
+    <mat-form-field>
+      <mat-label for="email">Email</mat-label>
+      <input matInput name="email" formControlName="email">
+    </mat-form-field>
     <span *ngIf="loginForm.get('email')?.touched">
       <span *ngIf="loginForm.get('email')?.errors?.required">
         Email requis
@@ -12,12 +14,14 @@
     </span>
   </p>
   <p>
-    <label for="password">Password</label>
-    <input name="password" formControlName="password">
-
+    <mat-form-field>
+      <mat-label for="password">Password</mat-label>
+      <input matInput name="password" formControlName="password">
+    </mat-form-field>
   </p>
   <p>
-    <button (click)="logIn()"
+    <button mat-button (click)="logIn()"
+            color="primary"
             [disabled]="!loginForm.valid">Log me in</button>
   </p>
 </form>

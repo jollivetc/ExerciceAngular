@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angularCRM';
+  title = 'Formation Angular';
+
+  fruits = ['apple', 'pear', 'banana'];
+
+  clicked($event: MouseEvent): void{
+    console.log($event);
+  }
 }

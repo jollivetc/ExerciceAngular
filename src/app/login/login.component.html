@@ -1,0 +1,23 @@
+<form [formGroup]="loginForm">
+  <p>
+    <label for="email">Email</label>
+    <input name="email" formControlName="email">
+    <span *ngIf="loginForm.get('email')?.touched">
+      <span *ngIf="loginForm.get('email')?.errors?.required">
+        Email requis
+      </span>
+      <span *ngIf="loginForm.get('email')?.errors?.minlength">
+        Longueur minimale de 3
+      </span>
+    </span>
+  </p>
+  <p>
+    <label for="password">Password</label>
+    <input name="password" formControlName="password">
+
+  </p>
+  <p>
+    <button (click)="logIn()"
+            [disabled]="!loginForm.valid">Log me in</button>
+  </p>
+</form>

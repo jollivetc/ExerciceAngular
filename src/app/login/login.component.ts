@@ -21,6 +21,9 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.authenticationService.isAuthenticated){
+      this.authenticationService.logout();
+    }
   }
 
   logIn(){
@@ -31,7 +34,6 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('/home');
     }
   }
-
 }
 
 function checkPassword(c:AbstractControl): ValidationErrors | null {

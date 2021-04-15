@@ -9,6 +9,8 @@ import { map, take } from 'rxjs/operators'
 })
 export class HomeComponent implements OnInit {
 
+  phoneNumber='1234567890';
+
   constructor(private demoObservable: DemoObservableService) { }
 
   ngOnInit(): void {

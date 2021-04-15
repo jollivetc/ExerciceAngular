@@ -27,12 +27,20 @@ export class LoginComponent implements OnInit {
   }
 
   logIn(){
-    const user = this.authenticationService.authentUser(
+    this.authenticationService.authentUser(
                     this.loginForm.value.email,
-                    this.loginForm.value.password);
-    if(user){
-      this.router.navigateByUrl('/home');
-    }
+                    this.loginForm.value.password)
+        .subscribe(
+          (result)=>{
+            console.log(result)
+            this.router.navigateByUrl('home');
+          },
+          (error)=>{
+            console.log(error);
+            alert("erreur login ou mdp");
+          },
+          ()=>{}
+        );
   }
 }
 

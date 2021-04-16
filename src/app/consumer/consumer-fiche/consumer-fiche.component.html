@@ -1,0 +1,28 @@
+<form [formGroup]="consumerForm">
+  <span>
+    <label for="civility">Civility</label>
+    <input name="civility" formControlName="civility">
+  </span>
+  <br/>
+  <span>
+    <label for="firstname">First name</label>
+    <input name="firstname" formControlName="firstname">
+  </span>
+  <br/>
+  <span>
+    <label for="lastname">Last name</label>
+    <input name="lastname" formControlName="lastname">
+  </span>
+  <br/>
+  <span>
+    <label for="email">email</label>
+    <input name="email" formControlName="email">
+  </span>
+  <br/>
+  <span>
+    <label for="phone">phone</label>
+    <input name="phone" formControlName="phone">
+  </span>
+  <button (click)="validate()"
+        [disabled]="!consumerForm.valid">Validate</button>
+</form>
